@@ -1,8 +1,7 @@
 # config file for MHHC algorithm
 import os
-# path to workspace of Python
-workspace = r"c:\Users\jsilhavy\Documents\PhD\Thesis\Vyzkum" + os.path.sep
-# workspace = r"c:\Users\jsilhavy\Documents\Prace\Projekty\Uni\Thesis\Git\Vyzkum" + os.path.sep
+# path to workspace
+workspace = r"c:\Users\jsilhavy\Documents\GitHub\MHHC\mhhc\sample" + os.path.sep
 # path to worskpace of PCI (cloud be the same or different)
 workspacePCI = "C:" + os.path.sep
 # path to results dir
@@ -40,7 +39,7 @@ imageData = "ImageData" + os.path.sep
 ### STEP 01 - DEM creation ###
 ##############################
 # list of names of source DEMs
-DEMs = ["sd_sr_dem_30"]
+DEMs = ["sa_sr_dem_30"]
 # source dir of DEMs
 sourceDir = workspace + "DEM" + os.path.sep
 # in case of irregular shape of DEM set 1, otherwise set 0
@@ -163,8 +162,8 @@ def getCellSize(DEM):
 def getSA(DEM):
   codeSApos = DEM.find("_")
   codeSA =DEM[0:codeSApos]
-  if codeSA == "sd":
-    SA = "SumavaDMR"
+  if codeSA == "sa":
+    SA = "SampleArea"
   else:
     SA = codeSA
   return SA
